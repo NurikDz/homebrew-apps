@@ -9,6 +9,12 @@ cask "tgdrive" do
 
   app "TGDrive.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TGDrive.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/TGDrive",
     "~/Library/Preferences/com.nurikdz.tgdrive.plist",

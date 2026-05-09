@@ -9,6 +9,12 @@ cask "envswitch" do
 
   app "EnvSwitch.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/EnvSwitch.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/EnvSwitch",
     "~/Library/Preferences/com.nurikdz.envswitch.plist",

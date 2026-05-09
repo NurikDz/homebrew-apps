@@ -9,6 +9,12 @@ cask "freestream" do
 
   app "FreeStream.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/FreeStream.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/FreeStream",
     "~/Library/Preferences/com.nurikdz.freestream.plist",

@@ -9,6 +9,12 @@ cask "iptvs" do
 
   app "iptvS.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/iptvS.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/iptvS",
     "~/Library/Preferences/com.nurikdz.iptvs.plist",

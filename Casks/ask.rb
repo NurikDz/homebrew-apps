@@ -9,6 +9,12 @@ cask "ask" do
 
   app "ASK.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/ASK.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/ASK",
     "~/Library/Preferences/com.nurikdz.ask.plist",

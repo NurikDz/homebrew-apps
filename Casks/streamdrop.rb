@@ -9,6 +9,12 @@ cask "streamdrop" do
 
   app "StreamDrop.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/StreamDrop.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/StreamDrop",
     "~/Library/Preferences/com.nurikdz.streamdrop.plist",

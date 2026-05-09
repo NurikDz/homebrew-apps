@@ -9,6 +9,12 @@ cask "sentrykit" do
 
   app "SentryKit.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/SentryKit.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/SentryKit",
     "~/Library/Preferences/com.nurikdz.sentrykit.plist",

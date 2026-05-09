@@ -9,6 +9,12 @@ cask "pastedesk" do
 
   app "PasteDesk.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/PasteDesk.app"],
+                   print_stderr: false
+  end
+
   zap trash: [
     "~/Library/Application Support/PasteDesk",
     "~/Library/Preferences/com.nurikdz.pastedesk.plist",
