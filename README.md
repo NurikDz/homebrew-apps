@@ -8,6 +8,7 @@ Install macOS apps directly via Homebrew — no Apple Developer ID required, no 
 |-----|-------------|---------|
 | **ASK** | Floating AI assistant — press a hotkey, ask anything | `brew install --cask NurikDz/apps/ask` |
 | **FreeStream** | Streaming aggregator & media player for macOS | `brew install --cask NurikDz/apps/freestream` |
+| **H+** | Streaming app with liquid glass interface for movies and series | `brew install --cask NurikDz/apps/h-plus` |
 | **TGDrive** | Telegram channel as cloud file storage | `brew install --cask NurikDz/apps/tgdrive` |
 | **SentryKit** | View & manage macOS privacy permissions (TCC) | `brew install --cask NurikDz/apps/sentrykit` |
 | **PasteDesk** | Clipboard manager on your desktop wallpaper | `brew install --cask NurikDz/apps/pastedesk` |
@@ -26,6 +27,7 @@ brew tap NurikDz/apps https://github.com/NurikDz/homebrew-apps
 # Install any app
 brew install --cask ask
 brew install --cask freestream
+brew install --cask h-plus
 brew install --cask tgdrive
 ```
 
@@ -80,11 +82,11 @@ SHA256=$3
 FILE=$4
 TAG=$5
 
-sed -i '' "s/version \".*\"/version \"${VERSION}\"/" Casks/${APP}.rb
-sed -i '' "s/sha256 \".*\"/sha256 \"${SHA256}\"/" Casks/${APP}.rb
+sed -i '' "s/version ".*"/version "${VERSION}"/" Casks/${APP}.rb
+sed -i '' "s/sha256 ".*"/sha256 "${SHA256}"/" Casks/${APP}.rb
 
 # If URL pattern changed, update it too:
-# sed -i '' "s|url \".*\"|url \"https://github.com/NurikDz/${REPO}/releases/download/${TAG}/${FILE}\"|" Casks/${APP}.rb
+# sed -i '' "s|url ".*"|url "https://github.com/NurikDz/${REPO}/releases/download/${TAG}/${FILE}"|" Casks/${APP}.rb
 
 git add Casks/${APP}.rb
 git commit -m "Update ${APP} to v${VERSION}"
