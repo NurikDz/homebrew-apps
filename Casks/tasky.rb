@@ -1,6 +1,6 @@
 cask "tasky" do
   version "1.1"
-  sha256 "01730d3dffbc8bde1a29ae9f9522a6530595a7384cb234dac6c43f3b1fc7c352"
+  sha256 "3e82654c0c28723bba1453d0e1d9878167a78f0e8a01705e0d7e9483362e23f4"
 
   url "https://github.com/NurikDz/Tasky/releases/download/Tasky/Tasky.dmg"
   name "Tasky"
