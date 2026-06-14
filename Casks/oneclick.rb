@@ -1,10 +1,10 @@
 cask "oneclick" do
-  version "1.1"
-  sha256 "b193bb3fbd4cebfd4720def987de7cf84a5379c82ad2b4097d186fe0a8837482"
+  version "1.2"
+  sha256 "f7c836e3c57de5ed534d7fe37d551f74551dc226f8bcd55232d1b3105d0e8a19"
 
   url "https://github.com/NurikDz/1clicklangs/releases/download/1clicklangs/OneClickLangs.dmg"
   name "1Click Language Store"
-  desc "One-click installer for 147 programming languages — the App Store for devs"
+  desc "Install 147 programming languages on macOS — with Bundles, CLI companion, and a live Dashboard"
   homepage "https://1click.pages.dev"
 
   app "OneClickLangs.app"
