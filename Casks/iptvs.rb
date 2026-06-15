@@ -1,6 +1,6 @@
 cask "iptvs" do
   version "0.4"
-  sha256 "5cb5fd5430da47f13efdd04367278e5536740809bbf3e5ef9019ee786d72439e"
+  sha256 "123f2da59227c19ea23f496e4c56f42771ff08b333744b9d47c9a9976901f0bd"
 
   url "https://github.com/NurikDz/IptvS/releases/download/iptvS0.4/iptvS.0.4.dmg"
   name "iptvS"
