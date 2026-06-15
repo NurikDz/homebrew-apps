@@ -1,4 +1,4 @@
-\cask "oneclick" do
+cask "oneclick" do
   version "1.3"
   sha256 "aeeaf18f5a145483da397afc6fed688fc6bd78cf87184243bb0a4fadbbd011ab"
 
